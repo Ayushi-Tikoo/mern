@@ -4,8 +4,7 @@
   "description": "Social network fro Developers",
   "main": "server.js",
   "scripts": {
-    "test": "node server",
-    "server": "nodemon server"
+    "serve": "nodemon server.js"
   },
   "author": "Ayushi Tikoo",
   "license": "ISC",
