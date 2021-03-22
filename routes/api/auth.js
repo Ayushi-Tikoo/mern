@@ -15,7 +15,7 @@ const config = require('config');
 
 //first the middleware auth runs then the response is given
 //in the middleware if the token is found valid then it goes further
-//if the token is found valid then the user details are shown
+//if the token is found valid then the user details are shown by id
 
 router.get('/', auth, async (req, res) => {
   try {
@@ -35,6 +35,7 @@ router.get('/', auth, async (req, res) => {
 
 router.post(
   '/',
+  //this is a middleware to check the email and password
   [
     check('email', 'Please Include a Valid Email').isEmail(),
 
