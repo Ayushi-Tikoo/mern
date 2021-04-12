@@ -1,11 +1,29 @@
 import './App.css';
 import React, { Fragment } from 'react';
+import Navbar from './components/layout/Navbar';
+import Landing from './components/layout/Landing';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import { Provider } from 'react-redux';
+import store from './store';
 
 const App = () => {
   return (
-    <Fragment>
-      <h1>App</h1>
-    </Fragment>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Fragment>
+          <Navbar />
+          <Route path='/' component={Landing} exact />
+          <section className='container'>
+            <Switch>
+              <Route path='/login' component={Login} exact />
+              <Route path='/register' component={Register} exact />
+            </Switch>
+          </section>
+        </Fragment>
+      </BrowserRouter>
+    </Provider>
   );
 };
 
