@@ -13,7 +13,7 @@ const connectDB = async () => {
     });
     console.log('MongoDB connected');
   } catch (err) {
-    console.error(err.message);
+    console.error("Error:=", err.message);
     //EXIT process with failure
     process.exit(1);
   }
